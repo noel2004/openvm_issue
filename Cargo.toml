@@ -1,0 +1,22 @@
+[package]
+name = "openvm_issue_report"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+openvm-sdk = { git = "https://github.com/openvm-org/openvm.git", default-features = false, features = [
+  "parallel",
+  "evm-prove",
+  "tco",
+  "unprotected"
+] }
+openvm-circuit = { git = "https://github.com/openvm-org/openvm.git", default-features = false }
+# more openvm related libs
+openvm-stark-sdk = { git = "https://github.com/openvm-org/stark-backend.git" }
+eyre = "0.6"
+toml = "0.8"
+bincode = { version = "2.0" }
+serde = { version = "1", default-features = false, features = ["derive"]  }
+
+[features]
+legacy = ["openvm-sdk/legacy-v1-3"]
