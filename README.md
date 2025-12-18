@@ -1,14 +1,37 @@
+## Core dump while proving
+Use `make` to reproduce the issue:
+
+~~~bash
+make test-core-dump
+~~~
+
+or
+~~~bash
+make test-core-dump-cpu
+~~~
+
+You can verify the input and app is correct by do an execution instead of proving, which should be success
+~~~bash
+make test-core-dump-execute
+~~~
+
+The issue can be resolved if we also use the `legacy` feature:
+~~~bash
+make test-core-dump-passed
+~~~
+
+
 ## Openvm issue while handling big inputs
 
 Use `make` to do test:
 
 ~~~bash
-make test
+make test-meter
 ~~~
 
 or
 ~~~bash
-make test-failure
+make test-meter-failure
 ~~~
 
 + `test_execute_cost` load an guest app built by up-to-date openvm (1.4.1)

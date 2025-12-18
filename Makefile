@@ -15,6 +15,10 @@ test-core-dump:
 	@echo "::test proving cause segment fault (or some memory corruption error)"
 	cargo test --features=cuda --release test_proving_core_dump -- --nocapture	
 
+test-core-dump-cpu:
+	@echo "::test proving with cpu also cause segment fault (or some memory corruption error)"
+	cargo test --release test_proving_core_dump -- --nocapture
+
 test-core-dump-execute:
 	@echo "::test to verify the execution is ok"
 	cargo test --features=cuda --release test_proving_execute_ok -- --nocapture
